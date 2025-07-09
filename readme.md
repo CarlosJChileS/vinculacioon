@@ -1,5 +1,6 @@
 # ExposIA
 
+
 ExposIA es un proyecto para entrenar habilidades de exposici\u00f3n oral. El sistema se divide en m\u00f3dulos independientes que pueden ejecutarse de forma conjunta o por separado.
 
 ## M\u00f3dulos
