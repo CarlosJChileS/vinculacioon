@@ -6,3 +6,4 @@ Estructura:
 - `controllers/`: API para obtener la calificaci\u00f3n.
 - `services/`: l\u00f3gica de c\u00e1lculo.
 - `dtos/`: definiciones de entrada y salida.
+

@@ -1,5 +1,4 @@
 from pydantic import BaseModel
-
 class AudioAnalysisInput(BaseModel):
     """DTO de entrada para analizar audio."""
 
