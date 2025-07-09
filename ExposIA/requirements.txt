@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+whisper
+spacy
+librosa
+praat-parselmouth
+python-multipart
