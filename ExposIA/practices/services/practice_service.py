@@ -1,5 +1,4 @@
 """Servicio de practicas."""
-
 from ...common.supabase_client import get_client
 
 

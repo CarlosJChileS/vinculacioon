@@ -1,5 +1,4 @@
 # Módulo de IA
-
 Este módulo implementa la API de análisis de audio de ExposIA utilizando FastAPI. 
 Está organizado por capas para facilitar su mantenimiento:
 
@@ -38,7 +37,6 @@ python -m uvicorn ExposIA.ia_module.main:app --reload
 ```
 
 Accede a la documentación Swagger en `http://localhost:8000/docs`.
-
 El submódulo `face_detection` es opcional y puede eliminarse sin afectar al resto
 del sistema.
 

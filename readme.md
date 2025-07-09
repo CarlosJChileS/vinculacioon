@@ -3,6 +3,7 @@
 ExposIA es un proyecto para entrenar habilidades de exposici\u00f3n oral. El sistema se divide en m\u00f3dulos independientes que pueden ejecutarse de forma conjunta o por separado.
 Todos los m\u00f3dulos pueden almacenar su informaci\u00f3n en una base de datos de Supabase (PostgreSQL administrado).
 
+
 ## M\u00f3dulos
 
 1. **Presentations** (`ExposIA/presentations`)
@@ -35,6 +36,7 @@ Algunas bibliotecas como Whisper pueden requerir modelos o claves externas. Conf
 
 - `OPENAI_API_KEY` si utilizas Whisper u otros servicios en la nube.
 - `SUPABASE_URL` y `SUPABASE_KEY` para conectar con la base de datos.
+
 
 ## Ejecuci\u00f3n
 

@@ -1,5 +1,4 @@
 from ..dtos.grading_dto import GradingInput, GradingResult
-from ...common.supabase_client import get_client
 
 
 def grade_practice(data: GradingInput) -> GradingResult:
@@ -15,3 +14,4 @@ def grade_practice(data: GradingInput) -> GradingResult:
     if client:
         client.table("calificaciones").insert(result.dict()).execute()
     return result
+
