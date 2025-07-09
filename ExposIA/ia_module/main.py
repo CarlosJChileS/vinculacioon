@@ -1,3 +1,13 @@
+
+from fastapi import FastAPI
+from .controllers.audio_controller import router as audio_router
+
+app = FastAPI(
+    title="ExposIA IA Module",
+    description="API de analisis de audio para exposiciones orales"
+)
+
+app.include_router(audio_router)
 from fastapi import FastAPI, UploadFile, File
 from pydantic import BaseModel
 from .ia_core.analysis import analyze_audio
