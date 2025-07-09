@@ -1,14 +1,19 @@
-"""Modelo ORM para almacenar resultados de analisis."""
-from sqlalchemy import Column, Float, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
+"""Modelos de dominio utilizados de manera local."""
+from pydantic import BaseModel, Field
 
-Base = declarative_base()
 
-class AnalysisResultModel(Base):
-    __tablename__ = "resultado_ia"
+class AnalysisResultModel(BaseModel):
+    """Representa un resultado de an\u00e1lisis sin persistencia."""
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    velocidad_palabras = Column(Float)
-    claridad = Column(Float)
-    num_pausas = Column(Integer)
-    retroalimentacion = Column(String)
+    id: int | None = Field(default=None, description="Identificador opcional")
+    velocidad_palabras: float
+    claridad: float
+    num_pausas: int
+    retroalimentacion: str
+
+
+class AudioInput(BaseModel):
+    """Datos de entrada de audio para procesamiento."""
+
+    filename: str
+    content: bytes
