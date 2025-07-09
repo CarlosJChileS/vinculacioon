@@ -11,6 +11,7 @@ async def analizar_archivo(audio: UploadFile = File(...)):
     data = AudioAnalysisInput(filename=audio.filename, content=await audio.read())
     result = process_audio(data)
     return to_dto(result)
+
 @router.post("/analisis/grabaciones/{grabacion_id}", response_model=AnalysisResult)
 async def analizar_grabacion(grabacion_id: str):
     """Analiza una grabacion existente por identificador."""
@@ -19,4 +20,3 @@ async def analizar_grabacion(grabacion_id: str):
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail="Grabacion no encontrada")
     return to_dto(result)
-

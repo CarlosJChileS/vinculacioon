@@ -1,15 +1,11 @@
-"""Repositorio para guardar feedback textual."""
-from typing import Optional
-from ...common.supabase_client import get_client
+"""Repositorio para manejar feedback textual."""
+from ...common.in_memory import InMemoryRepository
+from ..models.feedback import FeedbackModel
 
-_memory: list[dict] = []
+_repo = InMemoryRepository[FeedbackModel]()
 
-
-def save_feedback(result_id: int, texto: str) -> None:
-    """Guarda el feedback en Supabase o en memoria."""
-    client = get_client()
-    data = {"resultado_id": result_id, "texto": texto}
-    if client:
-        client.table("feedback").insert(data).execute()
-    else:
-        _memory.append(data)
+create_feedback = _repo.create
+list_feedback = _repo.list
+get_feedback = _repo.get
+update_feedback = _repo.update
+delete_feedback = _repo.delete

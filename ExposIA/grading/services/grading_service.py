@@ -1,8 +1,6 @@
 from ..dtos.grading_dto import GradingInput, GradingResult
 from ...common.supabase_client import get_client
 
-
-
 def grade_practice(data: GradingInput) -> GradingResult:
     """Genera una nota simple a partir de las metricas."""
     # Algoritmo ficticio

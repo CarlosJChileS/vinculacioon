@@ -1,17 +1,11 @@
-"""Repositorio para manejar la persistencia de resultados."""
+"""Repositorio para manejar resultados de analisis de audio."""
 from ..models.analysis_result import AnalysisResultModel
-from ...common.supabase_client import get_client
+from ...common.in_memory import InMemoryRepository
 
-_memory: list[dict] = []
+_repo = InMemoryRepository[AnalysisResultModel]()
 
-
-def save_result(result: AnalysisResultModel) -> AnalysisResultModel:
-    """Guarda el resultado en Supabase o en memoria si no hay credenciales."""
-    client = get_client()
-    data = result.dict(exclude_none=True)
-    if client:
-        client.table("resultado_ia").insert(data).execute()
-    else:
-        result.id = len(_memory) + 1
-        _memory.append(data)
-    return result
+create_result = _repo.create
+list_results = _repo.list
+get_result = _repo.get
+update_result = _repo.update
+delete_result = _repo.delete

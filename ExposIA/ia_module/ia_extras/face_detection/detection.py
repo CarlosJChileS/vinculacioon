@@ -18,4 +18,3 @@ async def analizar_video(video: UploadFile = File(...)):
     """Analiza un video y devuelve la emocion principal (simulada)."""
     content = await video.read()
     return analyze_emotion(content)
-

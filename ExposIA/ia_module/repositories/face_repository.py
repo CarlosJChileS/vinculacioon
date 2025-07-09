@@ -1,14 +1,11 @@
 """Repositorio para guardar resultados de deteccion facial."""
-from ...common.supabase_client import get_client
+from ...common.in_memory import InMemoryRepository
+from ..models.face import FaceRecord
 
-_memory: list[dict] = []
+_repo = InMemoryRepository[FaceRecord]()
 
-
-def save_face_result(result_id: int, emocion: str, confianza: float) -> None:
-    """Guarda la emocion dominante asociada a un resultado."""
-    client = get_client()
-    data = {"resultado_id": result_id, "emocion": emocion, "confianza": confianza}
-    if client:
-        client.table("deteccion_facial").insert(data).execute()
-    else:
-        _memory.append(data)
+create_face = _repo.create
+list_faces = _repo.list
+get_face = _repo.get
+update_face = _repo.update
+delete_face = _repo.delete
