@@ -9,8 +9,6 @@ def test_process_audio_returns_result():
     assert result.velocidad_palabras > 0
     assert result.claridad > 0
     assert isinstance(result.num_pausas, int)
-
-
 def test_process_recording(tmp_path):
     RECORDINGS_DIR.mkdir(parents=True, exist_ok=True)
     audio_path = RECORDINGS_DIR / "123.wav"
@@ -18,5 +16,3 @@ def test_process_recording(tmp_path):
     result = process_recording("123")
     assert result.velocidad_palabras > 0
     assert result.claridad > 0
-
-

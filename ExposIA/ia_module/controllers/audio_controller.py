@@ -12,7 +12,6 @@ async def analizar_archivo(audio: UploadFile = File(...)):
     result = process_audio(data)
     return to_dto(result)
 
-
 @router.post("/analisis/grabaciones/{grabacion_id}", response_model=AnalysisResult)
 async def analizar_grabacion(grabacion_id: str):
     """Analiza una grabacion existente por identificador."""

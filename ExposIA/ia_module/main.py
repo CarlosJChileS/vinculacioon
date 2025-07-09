@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from .controllers import audio_router, metric_router, feedback_router
-
 app = FastAPI(
     title="ExposIA IA Module",
     description="API de analisis de audio para exposiciones orales"

@@ -39,6 +39,7 @@ def process_recording(grabacion_id: str) -> Result:
     if analyze_emotion:
         face = analyze_emotion(b"")
         create_face(FaceRecord(resultado_id=saved.id or 0, emocion=face.emocion, confianza=face.confianza))
+
     return result
 
 

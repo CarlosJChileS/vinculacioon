@@ -7,7 +7,6 @@ router = APIRouter()
 class FaceResult(BaseModel):
     emocion: str
     confianza: float
-
 def analyze_emotion(video_bytes: bytes) -> FaceResult:
     """Devuelve una emocion generica para un video."""
     # Esta funcion deberia ejecutar un modelo real de deteccion facial

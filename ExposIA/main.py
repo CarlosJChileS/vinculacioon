@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-
 from .ia_module.controllers import audio_router, metric_router, feedback_router
 from .presentations.controllers import (
     upload_router, user_router, topic_router, presentation_router, slide_router
@@ -26,12 +25,12 @@ app = FastAPI(title="ExposIA API")
 app.include_router(audio_router, prefix="/ia")
 app.include_router(metric_router, prefix="/ia")
 app.include_router(feedback_router, prefix="/ia")
+
 try:
     from .ia_module.ia_extras.face_detection.detection import router as face_router
     app.include_router(face_router, prefix="/ia/face-detection")
 except ImportError:
     pass
-
 app.include_router(upload_router, prefix="/presentations")
 app.include_router(user_router, prefix="/presentations")
 app.include_router(topic_router, prefix="/presentations")

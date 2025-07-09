@@ -2,7 +2,6 @@
 
 ExposIA es un proyecto para entrenar habilidades de exposici\u00f3n oral. El sistema se divide en m\u00f3dulos independientes que pueden ejecutarse de forma conjunta o por separado.
 Todos los m\u00f3dulos pueden almacenar su informaci\u00f3n en una base de datos de Supabase (PostgreSQL administrado).
-
 ## M\u00f3dulos
 
 1. **Presentations** (`ExposIA/presentations`)
