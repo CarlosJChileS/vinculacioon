@@ -5,4 +5,5 @@ from ..dtos.analysis_dto import AudioAnalysisInput
 
 def process_audio(data: AudioAnalysisInput) -> Result:
     """Procesa el audio usando las funciones del core."""
-    return analyze_audio(data.content)
+    return analyze_audio(data.
+

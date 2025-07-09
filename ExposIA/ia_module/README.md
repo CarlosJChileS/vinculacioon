@@ -7,7 +7,6 @@ Está organizado por capas para facilitar su mantenimiento:
 - `mappers/`: transformaciones entre modelos y dtos.
 - `models/`: entidades de dominio (en memoria).
 - `repositories/`: preparado para persistencia futura en base de datos.
-
 - `services/`: lógica de negocio y orquestación de análisis.
 - `ia_core/`: funciones básicas de análisis (Whisper, SpaCy, Librosa, etc.).
 - `ia_extras/face_detection/`: análisis opcional de emociones faciales.
@@ -15,7 +14,8 @@ Está organizado por capas para facilitar su mantenimiento:
 ## Requisitos
 
 - Python 3.10+
-- (Opcional) PostgreSQL si se desea persistir resultados
+- Supabase (PostgreSQL) para guardar resultados
+- Variables `SUPABASE_URL` y `SUPABASE_KEY`
 - Dependencias de Python indicadas en `../requirements.txt`
 
 Instala todo con:
@@ -40,7 +40,8 @@ Accede a la documentación Swagger en `http://localhost:8000/docs`.
 El submódulo `face_detection` es opcional y puede eliminarse sin afectar al resto
 del sistema.
 
-Este módulo funciona por completo en memoria; no requiere base de datos.
+Si se configuran las variables de Supabase, los resultados se guardarán en la base
+de datos. En caso contrario, se utilizan estructuras en memoria.
 Contiene al menos cinco entidades Pydantic (`AudioAnalysisInput`, `AnalysisResult`,
 `Result`, `AnalysisResultModel`, `FaceResult`).
 
