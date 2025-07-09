@@ -2,7 +2,6 @@
 
 ExposIA es un proyecto para entrenar habilidades de exposici\u00f3n oral. El sistema se divide en m\u00f3dulos independientes que pueden ejecutarse de forma conjunta o por separado.
 Todos los m\u00f3dulos pueden almacenar su informaci\u00f3n en una base de datos de Supabase (PostgreSQL administrado).
-
 ## M\u00f3dulos
 
 1. **Presentaciones** (`ExposIA/presentaciones`)
@@ -48,6 +47,7 @@ Esto cargar\u00e1 las rutas de los cuatro m\u00f3dulos. Si s\u00f3lo quieres pro
 
 ```bash
 python -m uvicorn ExposIA.ia.main:app --reload
+
 ```
 
 Accede a la documentaci\u00f3n Swagger en `http://localhost:8000/docs`.
