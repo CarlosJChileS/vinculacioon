@@ -36,7 +36,15 @@ Inicia el módulo con Uvicorn:
 python -m uvicorn ExposIA.ia_module.main:app --reload
 ```
 
+Para analizar una grabación ya almacenada debes ubicar el archivo en
+`data/recordings/<grabacion_id>.wav` y llamar a:
+
+```bash
+curl -X POST http://localhost:8000/analisis/grabaciones/<grabacion_id>
+```
+
 Accede a la documentación Swagger en `http://localhost:8000/docs`.
+
 El submódulo `face_detection` es opcional y puede eliminarse sin afectar al resto
 del sistema.
 

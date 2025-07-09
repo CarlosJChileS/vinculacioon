@@ -7,5 +7,5 @@ spacy
 librosa
 praat-parselmouth
 python-multipart
-supabase-py
+supabase
 
