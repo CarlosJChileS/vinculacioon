@@ -1,7 +1,8 @@
 from pathlib import Path
 from fastapi import UploadFile
-from ...common.supabase_client import get_client
 from ..dtos.presentation_dto import PresentationInfo
+from ..models.presentation import PresentationOrm
+from ...common.database import SessionLocal
 
 UPLOAD_DIR = Path("data/presentations")
 
@@ -12,8 +13,8 @@ def save_presentation(uploaded: UploadFile) -> PresentationInfo:
     file_path = UPLOAD_DIR / uploaded.filename
     with file_path.open("wb") as buffer:
         buffer.write(uploaded.file.read())
-    client = get_client()
-    data = {"filename": uploaded.filename, "path": str(file_path)}
-    if client:
-        client.table("presentaciones").insert(data).execute()
+    with SessionLocal() as session:
+        obj = PresentationOrm(tema_id=1, usuario_id=1, archivo_pdf=str(file_path))
+        session.add(obj)
+        session.commit()
     return PresentationInfo(filename=uploaded.filename, stored_at=str(file_path))

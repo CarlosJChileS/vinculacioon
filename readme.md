@@ -1,7 +1,7 @@
 # ExposIA
 
 ExposIA es un proyecto para entrenar habilidades de exposici\u00f3n oral. El sistema se divide en m\u00f3dulos independientes que pueden ejecutarse de forma conjunta o por separado.
-Todos los m\u00f3dulos pueden almacenar su informaci\u00f3n en una base de datos de Supabase (PostgreSQL administrado).
+Los datos se guardan localmente en un archivo SQLite para facilitar las pruebas.
 ## M\u00f3dulos
 
 1. **Presentaciones** (`ExposIA/presentaciones`)
@@ -20,22 +20,23 @@ Todos los m\u00f3dulos pueden almacenar su informaci\u00f3n en una base de datos
 ## Requisitos
 
 - Python 3.10+
-- Una instancia de PostgreSQL gestionada por Supabase
-- Variables de entorno `SUPABASE_URL` y `SUPABASE_KEY`
+- Base de datos SQLite (se crea automáticamente en `data/exposia.db`)
 - Dependencias Python listadas en `ExposIA/requirements.txt`
-
-Instala todas las dependencias (incluyendo la librería `supabase`) con:
+ - Variable de entorno `DATABASE_URL` para cambiar la ubicación de la base de datos (opcional)
 
 ```bash
 pip install -r ExposIA/requirements.txt
 ```
+Inicializa la base de datos (opcional) ejecutando:
+
+```bash
+python scripts/init_sqlite.py
+```
 
 El proyecto utiliza la librería *Whisper* de código abierto de forma local, por
 lo que no se necesita clave de API. Solo debes descargar los modelos al
-instalar la dependencia. Configura únicamente las credenciales de Supabase en
-caso de que desees persistir los datos en PostgreSQL:
-
-- `SUPABASE_URL` y `SUPABASE_KEY`
+instalar la dependencia. La base de datos SQLite se crea automáticamente al
+iniciar la aplicación.
 
 ## Ejecuci\u00f3n
 

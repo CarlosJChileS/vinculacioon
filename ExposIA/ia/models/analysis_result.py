@@ -1,5 +1,16 @@
 """Modelos de dominio utilizados de manera local."""
 from pydantic import BaseModel, Field
+from sqlalchemy import Column, Integer, Float, String
+from ...common.database import Base
+
+
+class AnalysisResult(Base):
+    __tablename__ = "resultado_ia"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    velocidad_palabras = Column(Float)
+    claridad = Column(Float)
+    num_pausas = Column(Integer)
+    retroalimentacion = Column(String)
 
 
 class AnalysisResultModel(BaseModel):

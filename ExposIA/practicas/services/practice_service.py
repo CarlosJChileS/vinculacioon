@@ -1,12 +1,12 @@
 """Servicio de practicas."""
-
-from ...common.supabase_client import get_client
+from ..models.slide_nav import SlideNavigationOrm
+from ...common.database import SessionLocal
 
 
 def register_navigation() -> str:
     """Ejemplo de registro de navegacion en Supabase o memoria."""
-    client = get_client()
-    data = {"mensaje": "navegacion"}
-    if client:
-        client.table("navegacion_slides").insert(data).execute()
+    with SessionLocal() as session:
+        nav = SlideNavigationOrm(presentacion_id=1, slide_id=1, timestamp=0.0, tipo_navegacion="start")
+        session.add(nav)
+        session.commit()
     return "registro guardado"
