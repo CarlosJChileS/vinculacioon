@@ -9,7 +9,6 @@ class PresentationOrm(Base):
     tema_id = Column(Integer)
     usuario_id = Column(Integer)
     archivo_pdf = Column(String)
-
 class Presentation(BaseModel):
     id: int | None = None
     tema_id: int

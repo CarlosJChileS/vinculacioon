@@ -2,7 +2,6 @@
 
 ExposIA es un proyecto para entrenar habilidades de exposici\u00f3n oral. El sistema se divide en m\u00f3dulos independientes que pueden ejecutarse de forma conjunta o por separado.
 Los datos se guardan localmente en un archivo SQLite para facilitar las pruebas.
-
 ## M\u00f3dulos
 
 1. **Presentaciones** (`ExposIA/presentaciones`)
@@ -25,12 +24,9 @@ Los datos se guardan localmente en un archivo SQLite para facilitar las pruebas.
 - Dependencias Python listadas en `ExposIA/requirements.txt`
  - Variable de entorno `DATABASE_URL` para cambiar la ubicación de la base de datos (opcional)
 
-Instala todas las dependencias con:
-
 ```bash
 pip install -r ExposIA/requirements.txt
 ```
-
 Inicializa la base de datos (opcional) ejecutando:
 
 ```bash

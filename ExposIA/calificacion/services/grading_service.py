@@ -2,7 +2,6 @@ from ..dtos.grading_dto import GradingInput, GradingResult
 from ..models.grade import GradeOrm
 from ...common.database import SessionLocal
 
-
 def grade_practice(data: GradingInput) -> GradingResult:
     """Genera una nota simple a partir de las metricas."""
     # Algoritmo ficticio

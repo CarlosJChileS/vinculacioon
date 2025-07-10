@@ -47,3 +47,4 @@ def delete_result(obj_id: int) -> bool:
         session.delete(obj)
         session.commit()
         return True
+
