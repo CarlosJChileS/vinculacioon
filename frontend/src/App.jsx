@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import DashboardPage from './DashboardPage';
 import PracticePage from './PracticePage';
 import PracticeFeedbackPage from './PracticeFeedbackPage';
+import DemoFlowPage from './DemoFlowPage';
 
 function Home() {
   return <h2>Bienvenido a ExposIA</h2>;
@@ -90,13 +91,15 @@ export default function App() {
         <Link to="/">Inicio</Link> |{' '}
         <Link to="/dashboard">Dashboard</Link> |{' '}
         <Link to="/practicar">Práctica</Link> |{' '}
-        <Link to="/feedback">Feedback</Link>
+        <Link to="/feedback">Feedback</Link> |{' '}
+        <Link to="/demo">Demo</Link>
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/practicar" element={<PracticePage />} />
         <Route path="/feedback" element={<PracticeFeedbackPage />} />
+        <Route path="/demo" element={<DemoFlowPage />} />
       </Routes>
     </div>
   );

@@ -1,10 +1,44 @@
-from ...common.in_memory import InMemoryRepository
-from ..models import Slide
+from ...common.database import SessionLocal
+from ..models.slide import Slide, SlideOrm
 
-_repo = InMemoryRepository[Slide]()
 
-create_slide = _repo.create
-list_slides = _repo.list
-get_slide = _repo.get
-update_slide = _repo.update
-delete_slide = _repo.delete
+def create_slide(slide: Slide) -> Slide:
+    with SessionLocal() as session:
+        obj = SlideOrm(**slide.model_dump(exclude={"id"}))
+        session.add(obj)
+        session.commit()
+        session.refresh(obj)
+        return Slide(**obj.__dict__)
+
+
+def list_slides() -> list[Slide]:
+    with SessionLocal() as session:
+        objs = session.query(SlideOrm).all()
+        return [Slide(**o.__dict__) for o in objs]
+
+
+def get_slide(slide_id: int) -> Slide | None:
+    with SessionLocal() as session:
+        obj = session.get(SlideOrm, slide_id)
+        return Slide(**obj.__dict__) if obj else None
+
+
+def update_slide(slide_id: int, slide: Slide) -> Slide | None:
+    with SessionLocal() as session:
+        obj = session.get(SlideOrm, slide_id)
+        if not obj:
+            return None
+        for f, v in slide.model_dump(exclude={"id"}).items():
+            setattr(obj, f, v)
+        session.commit()
+        return Slide(**obj.__dict__)
+
+
+def delete_slide(slide_id: int) -> bool:
+    with SessionLocal() as session:
+        obj = session.get(SlideOrm, slide_id)
+        if not obj:
+            return False
+        session.delete(obj)
+        session.commit()
+        return True
