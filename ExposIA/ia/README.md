@@ -18,7 +18,7 @@ Está organizado por capas para facilitar su mantenimiento:
 - Supabase (PostgreSQL) para guardar resultados (opcional)
 - Variables `SUPABASE_URL` y `SUPABASE_KEY` para habilitar la base externa
 - Variable `OPENAI_API_KEY` si deseas usar Whisper desde la API de OpenAI
-- Dependencias de Python indicadas en `../requirements.txt`
+- Dependencias demain Python indicadas en `../requirements.txt`
 
 Instala todo con:
 
