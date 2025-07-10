@@ -30,10 +30,12 @@ Instala todas las dependencias (incluyendo la librería `supabase`) con:
 pip install -r ExposIA/requirements.txt
 ```
 
-Algunas bibliotecas como Whisper pueden requerir modelos o claves externas. Configura variables de entorno como:
+El proyecto utiliza la librería *Whisper* de código abierto de forma local, por
+lo que no se necesita clave de API. Solo debes descargar los modelos al
+instalar la dependencia. Configura únicamente las credenciales de Supabase en
+caso de que desees persistir los datos en PostgreSQL:
 
-- `OPENAI_API_KEY` si utilizas Whisper u otros servicios en la nube.
-- `SUPABASE_URL` y `SUPABASE_KEY` para conectar con la base de datos.
+- `SUPABASE_URL` y `SUPABASE_KEY`
 
 ## Ejecuci\u00f3n
 
@@ -47,7 +49,6 @@ Esto cargar\u00e1 las rutas de los cuatro m\u00f3dulos. Si s\u00f3lo quieres pro
 
 ```bash
 python -m uvicorn ExposIA.ia.main:app --reload
-
 ```
 
 Accede a la documentaci\u00f3n Swagger en `http://localhost:8000/docs`.

@@ -2,7 +2,7 @@ fastapi
 uvicorn
 sqlalchemy
 pydantic
-whisper
+openai-whisper
 spacy
 librosa
 praat-parselmouth

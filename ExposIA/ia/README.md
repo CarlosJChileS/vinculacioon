@@ -25,9 +25,10 @@ Instala todo con:
 pip install -r ../requirements.txt
 ```
 
-Algunas herramientas como Whisper pueden requerir claves o modelos externos. 
-Configura las variables de entorno necesarias, por ejemplo `OPENAI_API_KEY` si 
-utilizas el servicio de OpenAI.
+Este módulo emplea la versión local de *Whisper*, por lo que no necesitas una
+clave de API. El modelo se descarga automáticamente al ejecutarse por primera
+vez. Solo es necesario definir `SUPABASE_URL` y `SUPABASE_KEY` si deseas
+almacenar los resultados en PostgreSQL.
 
 ## Ejecución
 
