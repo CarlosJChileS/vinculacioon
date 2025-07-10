@@ -4,7 +4,7 @@ Este directorio contiene una pequeña aplicación React creada con Vite. Muestra
 
 ## Instalación
 
-Requiere Node 18+.
+Requiere Node 18+ y las dependencias listadas en `package.json`.
 
 ```bash
 npm install

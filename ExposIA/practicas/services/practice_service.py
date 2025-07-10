@@ -1,4 +1,5 @@
 """Servicio de practicas."""
+
 from ..models.slide_nav import SlideNavigationOrm
 from ...common.database import SessionLocal
 

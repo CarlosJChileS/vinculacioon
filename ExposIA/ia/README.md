@@ -15,8 +15,6 @@ Está organizado por capas para facilitar su mantenimiento:
 ## Requisitos
 
 - Python 3.10+
-- Supabase (PostgreSQL) para guardar resultados
-- Variables `SUPABASE_URL` y `SUPABASE_KEY`
 - Dependencias de Python indicadas en `../requirements.txt`
 
 Instala todo con:

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-
+import HomePage from './HomePage';
+import DashboardPage from './DashboardPage';
+import PracticePage from './PracticePage';
+import PracticeFeedbackPage from './PracticeFeedbackPage';
 function Home() {
   return <h2>Bienvenido a ExposIA</h2>;
 }
@@ -84,17 +87,15 @@ export default function App() {
     <div>
       <nav>
         <Link to="/">Inicio</Link> |{' '}
-        <Link to="/presentaciones">Presentaciones</Link> |{' '}
-        <Link to="/practicas">Prácticas</Link> |{' '}
-        <Link to="/ia">IA</Link> |{' '}
-        <Link to="/calificacion">Calificación</Link>
+        <Link to="/dashboard">Dashboard</Link> |{' '}
+        <Link to="/practicar">Práctica</Link> |{' '}
+        <Link to="/feedback">Feedback</Link>
       </nav>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/presentaciones" element={<Presentaciones />} />
-        <Route path="/practicas" element={<Practicas />} />
-        <Route path="/ia" element={<IA />} />
-        <Route path="/calificacion" element={<Calificacion />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/practicar" element={<PracticePage />} />
+        <Route path="/feedback" element={<PracticeFeedbackPage />} />
       </Routes>
     </div>
   );

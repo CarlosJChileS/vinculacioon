@@ -1,4 +1,4 @@
-
+"""Repositorio para manejar feedback textual."""
 from typing import List, Optional
 
 from ..models.feedback import FeedbackModel, Feedback

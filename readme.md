@@ -22,7 +22,10 @@ Los datos se guardan localmente en un archivo SQLite para facilitar las pruebas.
 - Python 3.10+
 - Base de datos SQLite (se crea automáticamente en `data/exposia.db`)
 - Dependencias Python listadas en `ExposIA/requirements.txt`
- - Variable de entorno `DATABASE_URL` para cambiar la ubicación de la base de datos (opcional)
+- Variable de entorno `DATABASE_URL` para cambiar la ubicación de la base de datos (opcional)
+- Variables opcionales `OPENAI_API_KEY`, `SUPABASE_URL` y `SUPABASE_KEY` para habilitar servicios externos
+
+Instala todas las dependencias con:
 
 ```bash
 pip install -r ExposIA/requirements.txt
