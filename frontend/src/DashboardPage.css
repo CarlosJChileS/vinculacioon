@@ -1,0 +1,261 @@
+.dashboard-bg {
+  background: #1a1a1a;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.dashboard-container {
+  background: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(55,65,81,0.07);
+  padding-bottom: 2rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem 1rem 2rem;
+  border-bottom: 1px solid #ede9fe;
+  background: #fff;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #6d28d9;
+}
+
+.dashboard-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.dashboard-header-icon {
+  color: #6d28d9;
+  font-size: 1.3rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.user-avatar {
+  background: #6d28d9;
+  color: #fff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #18181b;
+}
+
+.user-role {
+  color: #8b5cf6;
+  font-size: 0.96rem;
+  font-weight: 400;
+}
+
+main {
+  padding: 2rem 2.2rem 0 2.2rem;
+}
+
+.dashboard-welcome h2 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+  color: #1e1b4b;
+}
+
+.dashboard-welcome p {
+  margin-bottom: 1.2rem;
+  color: #52525b;
+}
+
+.dashboard-stats {
+  display: flex;
+  gap: 1.3rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: #fff;
+  padding: 1.1rem 1.4rem;
+  border-radius: 11px;
+  min-width: 150px;
+  box-shadow: 0 1px 8px rgba(55,65,81,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 150px;
+  margin-bottom: 0.7rem;
+}
+
+.stat-value {
+  font-size: 1.36rem;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #6366f1;
+  font-weight: 500;
+}
+
+.stat-desc {
+  font-size: 0.97rem;
+  color: #8b8b99;
+}
+
+.dashboard-section {
+  margin-top: 2.2rem;
+}
+
+.section-title {
+  font-size: 1.07rem;
+  font-weight: 600;
+  color: #3730a3;
+  margin-bottom: 1.1rem;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.activity-item {
+  background: #fff;
+  border-radius: 9px;
+  box-shadow: 0 1px 6px rgba(55,65,81,0.04);
+  padding: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #f3f3fc;
+}
+
+.activity-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e1b4b;
+}
+
+.activity-desc {
+  font-size: 0.93rem;
+  color: #888;
+  margin-top: 0.13rem;
+}
+
+.activity-time {
+  color: #8b5cf6;
+  font-size: 0.93rem;
+  font-weight: 500;
+  min-width: 84px;
+  text-align: right;
+}
+
+.see-history {
+  color: #6d28d9;
+  font-size: 1rem;
+  margin-top: 0.7rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.1rem;
+}
+
+.btn-primary {
+  background: #6d28d9;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #4f46e5;
+}
+
+.btn-outline {
+  background: #fff;
+  color: #6d28d9;
+  border: 1px solid #6d28d9;
+  border-radius: 7px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+  background: #ede9fe;
+  color: #5b4dfa;
+}
+
+.dashboard-tips {
+  background: #eef2ff;
+  border: 1.5px solid #c7d2fe;
+  border-radius: 8px;
+  padding: 1rem 1.2rem 1.2rem 1.2rem;
+  color: #3730a3;
+  margin-top: 1.5rem;
+}
+
+.tips-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #3730a3;
+}
+
+.dashboard-tips ul {
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+}
+
+.dashboard-tips li {
+  font-size: 0.97rem;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 700px) {
+  .dashboard-container {
+    border-radius: 0;
+    padding-bottom: 1rem;
+  }
+  .dashboard-header, main {
+    padding: 1.2rem 0.6rem 0.5rem 0.6rem;
+  }
+  .dashboard-stats,
+  .dashboard-actions {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
