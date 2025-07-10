@@ -6,7 +6,6 @@ from tempfile import NamedTemporaryFile
 import librosa
 import whisper
 from pydantic import BaseModel
-
 class Result(BaseModel):
     velocidad_palabras: float
     claridad: float

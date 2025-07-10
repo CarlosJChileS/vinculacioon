@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import DashboardPage from './DashboardPage';
 import PracticePage from './PracticePage';
 import PracticeFeedbackPage from './PracticeFeedbackPage';
+
 function Home() {
   return <h2>Bienvenido a ExposIA</h2>;
 }
