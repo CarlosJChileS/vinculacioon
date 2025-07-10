@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+openai-whisper
+spacy
+librosa
+praat-parselmouth
+python-multipart
+supabase
