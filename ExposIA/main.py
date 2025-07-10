@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-
 from .ia.controllers import audio_router, metric_router, feedback_router
 from .presentaciones.controllers import (
     upload_router, user_router, topic_router, presentation_router, slide_router
