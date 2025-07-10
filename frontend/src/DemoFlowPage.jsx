@@ -21,20 +21,43 @@ export default function DemoFlowPage() {
       const pdf = new Blob(["dummy"], { type: "application/pdf" });
       const form = new FormData();
       form.append("file", pdf, "ia.pdf");
-      await fetch("http://localhost:8000/presentaciones/upload", { method: "POST", body: form });
+      const presRes = await fetch("http://localhost:8000/presentaciones/upload", { method: "POST", body: form });
+      const presData = await presRes.json();
       addLog("Presentación subida");
 
-      // Paso 3: Generación de Slides (simulado)
+      // Paso 3: Generación de Slides
       addLog("Generando slides...");
       const slides = ["¿Qué es la IA?", "Aplicaciones de la IA"];
+      for (let i = 0; i < slides.length; i++) {
+        await fetch("http://localhost:8000/presentaciones/slides/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ presentacion_id: 1, numero_slide: i + 1, texto_slide: slides[i] }),
+        });
+      }
       addLog(`Slides generados: ${slides.join(" | ")}`);
 
-      // Paso 4: Práctica de Exposición (simulada)
+      // Paso 4: Práctica de Exposición
       addLog("Enviando grabación...");
       const audioBlob = new Blob(["dummy"], { type: "audio/wav" });
       const audioForm = new FormData();
-      audioForm.append("audio", audioBlob, "grab1.mp3");
-      const iaRes = await fetch("http://localhost:8000/ia/analisis", { method: "POST", body: audioForm });
+      audioForm.append("audio", audioBlob, "grab1.wav");
+      const recRes = await fetch("http://localhost:8000/practicas/recordings/upload?usuario_id=1&presentacion_id=1", {
+        method: "POST",
+        body: audioForm,
+      });
+      const recData = await recRes.json();
+      await fetch("http://localhost:8000/practicas/navigation/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ presentacion_id: 1, slide_id: 1, timestamp: 0, tipo_navegacion: "start" }),
+      });
+      await fetch("http://localhost:8000/practicas/navigation/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ presentacion_id: 1, slide_id: 2, timestamp: 30, tipo_navegacion: "next" }),
+      });
+      const iaRes = await fetch(`http://localhost:8000/ia/analisis/grabaciones/${recData.id}`, { method: "POST" });
       const iaData = await iaRes.json();
       addLog(`Resultados IA: claridad ${iaData.claridad}, velocidad ${iaData.velocidad_palabras}, pausas ${iaData.num_pausas}`);
 
